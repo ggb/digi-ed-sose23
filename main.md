@@ -8,6 +8,7 @@ narrator: UK English Female
 
 \-->
 
+
 # Digitale Editionswissenschaft<br/>unterstützt durch KI-Schreibwerkzeuge
 
 **Dozierende:**
@@ -143,19 +144,17 @@ Antwort von ChatGPT:
 
 > Sure, here's the bibtex entry for the citation you provided in APA style:
 >
-> ```
 > @incollection{sahle2016,
->  author       = {Sahle, Patrick},
->  title        = {What is a Scholarly Digital Edition?},
->  booktitle    = {Digital Scholarly Editing: Theories and Practices},
->  editor       = {Driscoll, Matthew James and Pierazzo, Elena},
->  year         = {2016},
->  publisher    = {Open Book Publishers},
->  url          = {http://books.openedition.org/obp/3397},
->  address      = {Cambridge},
->  pages        = {17-34}
+> author       = {Sahle, Patrick},
+> title        = {What is a Scholarly Digital Edition?},
+> booktitle    = {Digital Scholarly Editing: Theories and Practices},
+> editor       = {Driscoll, Matthew James and Pierazzo, Elena},
+> year         = {2016},
+> publisher    = {Open Book Publishers},
+> url          = {http://books.openedition.org/obp/3397},
+> address      = {Cambridge},
+> pages        = {17-34}
 > }
-> ```
 
 Welche Angaben in der Ausgabe von ChatGPT könnten problematisch sein (und warum?) und bedürfen voraussichtlich einer händischen Anpassung? Warum ist die Ausgabe dennoch nützlich?
 
@@ -391,13 +390,13 @@ In diesem Sinne funktioniert XML wie eine Matroshka-Puppe, da sich *tags* ineina
 
 ```xml
 <person>
-  <name>Max Mustermann</name>
-  <alter>30</alter>
-  <adresse>
-    <straße>Hauptstraße 1</straße>
-    <stadt>Berlin</stadt>
-    <land>Deutschland</land>
-  </adresse>
+   <name>Max Mustermann</name>
+   <alter>30</alter>
+      <adresse>
+      <straße>Hauptstraße 1</straße>
+      <stadt>Berlin</stadt>
+      <land>Deutschland</land>
+   </adresse>
 </person>
 ```
 
@@ -414,7 +413,7 @@ Noch ein Hinweis zum Schluss: Wenn ein XML-Dokument selbst bestimmte Sonderzeich
 Würde unweigerlich zu einem Fehler führen, während
 
 ```xml
-<formula>3 &lt; 4 =&gt; True</formula>
+<formula>3 < 4 => True</formula>
 ```
 
 korrekt ist.
@@ -433,13 +432,13 @@ Zum Beispiel könnte XML verwendet werden, um Informationen über eine Person zu
 
 ```xml
 <person>
-  <name>Max Mustermann</name>
-  <alter>30</alter>
-  <adresse>
-    <straße>Hauptstraße 1</straße>
-    <stadt>Berlin</stadt>
-    <land>Deutschland</land>
-  </adresse>
+   <name>Max Mustermann</name>
+   <alter>30</alter>
+   <adresse>
+      <straße>Hauptstraße 1</straße>
+      <stadt>Berlin</stadt>
+      <land>Deutschland</land>
+   </adresse>
 </person>
 ```
 
@@ -453,13 +452,13 @@ Durch die Verwendung von XML können Computer leichter Informationen austauschen
 
 ```xml
 <person>
-  <name>Max Mustermann</name>
-  <alter>30</alter>
-  <adresse>
-    <straße>Hauptstraße 1</straße>
-    <stadt>Berlin</stadt>
-    <land>Deutschland</land>
-  </adresse>
+   <name>Max Mustermann</name>
+   <alter>30</alter>
+   <adresse>
+      <straße>Hauptstraße 1</straße>
+      <stadt>Berlin</stadt>
+      <land>Deutschland</land>
+   </adresse>
 </person>
 ```
 
@@ -501,12 +500,12 @@ d) In welchem Verhältnis stehen die *tags* *land* und *person* (X ist \_ zu Y) 
 
 ```xml
 <book>
-  <title>Harry Potter and the Sorcerer's Stone</title>
-  <author>J.K. Rowling</autor>
-  <year>1997</year>
-  <publisher>Scholastic</publisher>
+   <title>Harry Potter and the Sorcerer's Stone</title>
+   <author>J.K. Rowling</autor>
+   <year>1997</year>
+   <publisher>Scholastic</publisher>
 </book>
-  <genre>Fantasy</genre>
+<genre>Fantasy</genre>
 ```
 
 Welche Fehler sind darin enthalten?
@@ -523,10 +522,10 @@ Welche Fehler sind darin enthalten?
 
 ```xml
 <book>
-  <title>The Catcher in the Rye<title>
-  <author>J.D. Salinger<author>
-  <year>1951</year>
-  <publisher>Little, Brown and Company</publisher
+   <title>The Catcher in the Rye<title>
+   <author>J.D. Salinger<author>
+   <year>1951</year>
+   <publisher>Little, Brown and Company</publisher
 </book>
 ```
 
@@ -699,7 +698,7 @@ Jannidis, F.; Kohle, H. & Rehbein, M. (Eds.): *Digital Humanities*. J.B. Metzler
 
 Wiederholungsfragen zur letzten Woche bzw. zum Kapitel 9 aus Jannidis:
 
-1. Warum müssen bestimmte Zeichen mit speziellen Zeichen enkodiert werden, bspw. '<' durch '&lt;'?
+1. Warum müssen bestimmte Zeichen mit speziellen Zeichen enkodiert werden, bspw. '<' durch '<'?
 2. Was ist der Unterschied zwischen *well formed* und *valid* in Bezug auf XML?
 3. Was bedeutet es, dass XML eine Metasprache ist?
 4. Welche Funktion haben Schemata?
@@ -712,14 +711,14 @@ Das folgende XML-Dokument enthält einige Probleme, welche?
 
 ```xml
 <book>
-  <title>The Great Gatsby</title>
-  <author>F. Scott Fitzgerald</author>
-  <year>1925<year>
-  <publishing>
-    Publishing House
-    <name>Penguin</name>
-    <city>New York</city>
-  </publishing>
+   <title>The Great Gatsby</title>
+   <author>F. Scott Fitzgerald</author>
+   <year>1925<year>
+   <publishing>
+      Publishing House
+      <name>Penguin</name>
+      <city>New York</city>
+   </publishing>
 </book>
 ```
 
@@ -729,18 +728,18 @@ Gegeben ist das folgende XML-Snippet:
 
 ```xml
 <library>
-  <book>
-    <title>The Hobbit</title>
-    <author>J.R.R. Tolkien</author>
-    <year>1937</year>
-    <publisher>Houghton Mifflin</publisher>
-  </book>
-  <book>
-    <title>To Kill a Mockingbird</title>
-    <author>Harper Lee</author>
-    <year>1960</year>
-    <publisher>J. B. Lippincott &amp; Co.</publisher>
-  </book>
+   <book>
+      <title>The Hobbit</title>
+      <author>J.R.R. Tolkien</author>
+      <year>1937</year>
+      <publisher>Houghton Mifflin</publisher>
+   </book>
+   <book>
+      <title>To Kill a Mockingbird</title>
+      <author>Harper Lee</author>
+      <year>1960</year>
+      <publisher>J. B. Lippincott & Co.</publisher>
+   </book>
 </library>
 ```
 
@@ -828,16 +827,12 @@ Das Tool ist besonders nützlich für historische Dokumente, Archive, Bibliothek
 2. Collection mit einem sinnvollen Namen erstellen
 3. PDF Dokument hochladen: Entweder in der Collection oder unter Upload die Datei auswählen; aufpassen, dass der korrekte Dateityp gewählt wird.
 4. Automatische Texterkennung starten:
-
    * *Transkribus Print M1* als Modell auswählen
    * Warten: Die Transkription kann einige Zeit in Anspruch nehmen. Einen Überblick über den Fortschritt kann man sich unter "Jobs" verschaffen.
-
 5. Für jede Seite...
-
    * Layout überprüfen und anpassen: Stimmen die Regionen oder sollten Regionen zusammengelegt werden? Wurden alle Zeilen erfasst? Wurden die Marginalien erfasst?
    * Transkription überprüfen: Erkennungsfehler beheben.
    * Speichern.
-   
 6. Export der Ergebnisse
 
 ### Hausaufgabe
@@ -853,3 +848,259 @@ Das Tool ist besonders nützlich für historische Dokumente, Archive, Bibliothek
 ## Sitzung am 18.05.
 
 **Entfällt wg. Christi Himmelfahrt.**
+
+## Sitzung am 25.05.
+
+Arbeitssitzung, die wir zur gemeinsamen Bearbeitung der Transkription nutzen wollen.
+
+### Vernetzt euch!
+
+![Bildet Olsenbanden!](img/Bildet_olsenbanden.jpg)
+
+### Transkribus FAQ
+
+Den Rückmeldungen nach, die wir erhalten haben, klappt die Transkription mit Transkribus insgesamt gut, auch wenn es hier und da Probleme gibt.
+
+> **HINWEIS:** Transkribus funktioniert *nicht* im Safari-Browser. Sollten Sie ein Apple-Endgerät verwenden, wechseln Sie bitte für die Arbeit mit Transkribus zu Chrome oder Firefox.
+
+Aus den Arbeitsstandsberichten haben wir die folgenden Fragen entnommen...
+
+#### Quellenmaterial
+
+{{1}}
+**Q:** Was mache ich, wenn meine Transkription so aussieht?
+![Wenn es schief geht...](img/Screenshot_Kortholdt_1.png)
+
+{{2}}
+**A:** Bei einer Transkription, bei der die Linien in diesem Ausmaß falsch erkannt werden, liegt das Quellenmaterial vermutlich in zu geringer Auflösung vor. Dies kann insbesondere dann vorkommen, wenn es sich um ein automatisch generiertes PDF-Dokument handelt. Wenden Sie sich in diesem Fall bitte an uns!
+
+{{3}}
+**Q:** Was mache ich, wenn überflüssige Informationen (bspw. Anmerkungen von Bibliotheken) mittranskribiert werden?
+
+{{4}}
+**A:** Diese Informationen *sollen* restlos gelöscht werden. Die Regionen sollten so angepasst werden, dass sie den entsprechenden Bereich nicht miterfassen.
+
+#### Linien
+
+{{1}}
+**Q:** Wie können neue Zeilen (bspw. für Bibelverse) angelegt werden?
+
+{{2}}
+**A:** Mit dem Linientool, s. Demo!
+
+{{3}}
+**Q:** Wie ist mit getrennten Linien (Zeilen) umzugehen?
+
+{{4}}
+**A:** Leider gibt es derzeit keine andere Lösung, als die Inhalte der zweiten Hälfte in die erste zu kopieren und dann das überflüssige Fragment zu entfernen.
+
+{{5}}
+**Q:** Wie lassen sich Linien trennen?
+
+{{6}}
+**A:** Auch dafür gibt es keine elegante Lösung: Mit dem Linientool sollten für die neuen Elemente Linien gezogen und die Inhalte hinein kopiert werden. Die ursprüngliche Linie kann dann entfernt werden.
+
+#### Regionen
+
+{{1}}
+**Q:** Wie können zusätzliche Angaben (wie Bibelstellen) einer Extraregion zugeordnet und trotzdem erkennbar gemacht werden, in welcher Zeile sie ursprünglich standen?
+
+{{2}}
+**A:** Das ist möglich, aber für unsere Zwecke nicht notwendig. Implizit wird es bereits miterfasst.
+
+{{3}}
+**Q:** Kann ich die Größe/Form von Regionen verlässlich (sprich: nicht mit der Maus) ändern?
+
+{{4}}
+**A:** Nein. Leider stellt die Maus derzeit die einzige Möglichkeit der Bearbeitung dar.
+
+{{5}}
+**Q:** Wofür müssen neue Regionen angelegt werden bzw. wofür sind einzelne Regionen sinnvoll?
+
+{{6}}
+**A:** *So viele wie nötig, so wenig wie möglich.* Für den Fließtext einer Seite sollte eine Region angelegt werden, darüber hinaus für die Marginalia und (falls vorhanden) die Fußnoten. In der Regel sollten Sie mit zwei bis drei Regionen pro Seite auskommen.
+
+#### Transkription
+
+**Q:** Wie mit handschriftlichen Ergänzungen umgegangen werden? Wie verlässlich müssen die transkribiert werden?
+
+{{1}}
+**A:** Das kommt ganz darauf an...
+
+{{2}}
+**Q:** Wie können große, verzierte Buchstaben transkribiert und zugeordnet werden?
+
+{{3}}
+**A:** Transkribus erkennt solche Buchstaben häufig gar nicht; sie sind im Transkript manuell an der korrekten Stelle zu ergänzen.
+
+{{4}}
+**Q:** Sind vermutete Leerzeichen in der Transkription zu ergänzen, wenn sie im Original nicht ersichtlich sind?
+
+{{5}}
+**A:** Nein.
+
+{{6}}
+**Q:** Woran liegt es, dass teils unterschiedlich viele Buchstaben groß/klein geschrieben werden? Muss die Groß- und Kleinschreibung korrigiert werden?
+
+{{7}}
+**A:** Die Groß- und Kleinschreibung sollte der Quelle entsprechen.
+
+#### Wie geht es weiter?
+
+**Q:** Gibt es weitere Fragen?
+
+{{1}}
+**A:** ...
+
+{{2}}
+**Q:** Sollen in Transkribus Annotationen gemacht werden?
+
+{{3}}
+**A:** Nein. Das ist zwar möglich, aber wir werden die Annotationen in einem zweiten Schritt (und sehr viel bequemer) angehen.
+
+{{4}}
+**Q:** Wenn wir damit fertig sind, wie sollen wir Ihnen das schicken?
+
+{{5}}
+**A:** Über den Export sprechen wir in der kommenden Woche.
+
+### Hausaufgabe
+
+> Erstellen Sie mit Transkribus ein Transkript der Ihnen zugewiesenen (Abschnitt einer) Leichenpredigt.
+>
+> Schließen Sie die Transkription ab.
+
+## Sitzung am 01.06.
+
+Einführung TEI und gemeinsame Arbeitssitzung zur Fortsetzung der Transkription.
+
+### Gemeinsame Sprache TEI
+
+![Logo_TEI!](img/TEI.jpg)
+
+1. Die Text-Encoding-Initiative ist ein Konsortium, das einen *community standard* erstellt und pflegt.
+2. Sie stellen v.a. die guidelines zur Verfügung, die ein kontrolliertes Vokabular der Auszeichnung ermöglichen. Aus den (vermutlich) unendlichen Möglichkeiten der XML-Auszeichnungen trifft die TEI eine Auswahl und legt damit ein Vokabular und eine Grammatik fest.
+
+> TEI P5 Guidelines
+> http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html  
+> Version 4.6.0. (letztes Update am 04. April 2023)
+
+#### Wiederholung: Validität
+
+{{1}}
+* Erfüllt das Dokument ein Set an Regeln, die in einem spezifischen Schema definiert sind und dem Dokument zugewiesen sind?
+* In einem Schema werden die Grammatik und das Vokabular festgelegt, z.B. welche Elementnamen erlaubt sind, ob sie eine nähere Beschreibung mit Attributen erzwingen etc.
+* Schemata können sehr allgemein oder sehr spezifisch sein; TEI stellt einige zur Verfügung aber alle können ein eigenes Schema bauen.
+
+#### Vokabular und Grammatik
+
+* Wir weisen unseren Dokumenten ein „Schema“ zu, das die nötigen Einschränkungen enthält. Die Dateiendung eines Schemas ist (in unserem Fall) rng.
+* tei_all ist das umfangreichste und größte Schema.
+
+### Grundstruktur
+
+1. Wurzelelemnt ist <TEI>
+2. Namespace kommt mit in das Wurzelelement: <TEI xmlns=“http://www.tei-c.org/ns/1.0“>
+3. Zuweisung des Schemas
+4. <teiHeader> für die Metadaten
+5. <text> erst jetzt folgt der Text der Edition
+
+#### Header - Ein Zuhause für Metadaten
+
+* Elektronische Titelei der Edition u.v.m.
+* Eines der wenigen verpflichtenden Elemente in TEI.
+* Enthält beschreibende und erklärende Metadaten, die der digitalen Ressource vorangestellt sind.
+* Repositorien, bspw. Bibliotheken und Archive brauchen Metadaten (Bsp: Kataloge).
+* Enthält die Dokumentation der Kodierungspraxis.
+
+#### 4 (oder 5?) Kernelemente
+
+* <fileDesc> -> bibliographische Beschreibung der Datei
+* <encodingDesc> -> Verhältnis zwischen elektronischem Text und seiner Quelle
+* <profileDesc> -> Beschreibung der nicht-bibliographischen Merkmale des Textes, insbes. Sprache, Entstehung(sbedingungen), Beteiligte, Aussehen des Mediums
+* <xenoData> -> alle nicht TEI-konformenen Metadaten
+* <revisionDesc> -> dokumentiert die Änderungen, die an der elektronischen Datei vorgenommen wurden (wer, wann, was)
+
+> Woher können wir diese Informationen in *unserem* Fall bekommen?
+
+#### Must-have I
+
+* <fileDesc> ist das einzige verpflichtende Elemente im header.
+* Aus der <fileDesc> werden wichtige Informationen übernommen, die für Katalogeinträge relevant sind und die Zitation der elektronischen Datei ermöglichen. AutorIn, Titel, HerausgeberIn, Publikation, Distribution, Angaben zur analogen Quelle, Verantwortliche, Finanzierung des Projekts etc. werden dort festgehalten.
+* Eine gute <fileDesc> weist gute wissenschaftliche Praxis aus und validiert digitale Publikationen als nachvollziehbar und zitierbar.
+
+#### Must-have II
+
+Innerhalb der <fileDesc> stehen verpflichtend:
+
+1. <titleStmt> Angaben zum Titel der Datei
+2. <publicationStmt> Angaben zu den Publikationsdaten der Datei
+3. <sourceDesc> Angaben zur Quelle/Vorlage der Datei
+
+Wie für die meisten Dinge zu Beginn einer Publikation, ist es ratsam, diese Informationen erst am Ende des Prozesses einzutragen und zu Beginn lediglich Platzhalter zu schreiben
+
+#### Unser Annotationsvokabular
+
+* Person (`persName`)
+* Organisation (`orgName`)
+* Ort (`placeName`)
+* Term, Begriff (`term`)
+* Datum (`date`)
+* Link (`ref`)
+* Abkürzung (`abbr`)
+* Sic! (`sic`)
+* Regulierende Eingriffe (`reg`)
+* Highlight (`hi`)
+
+### Vorgaben für die Transkription in Transkribus
+
+Die Transkription der Leichenpredigten in Transkribus sollte pro (regulärer Text-)Seite vier Regionen umfassen:
+
+1. Der Kopfbereich, mit Seitenzahl und -überschrift. Alle inhaltlich distinkten Informationen sollten auf einer eigenen Linie erfasst werden, d. h. im Beispiel besteht diese erste Region aus zwei Zeilen: Die erste enthält die Seitenzahl ("10"), die andere die Überschrift ("Christliche").
+2. Die Hauptregion umfasst den gesammten Fließtext der Seite (im Beispiel von "Emahus" bis "möge").
+3. Die Marginalinformationen werden in einer eigenen, dritten Region erfasst. Alle Informationen in dieser Region sollten jeweils auf einer eigenen Zeile erfasst werden.
+4. Die optionalen Informationen im Fußbereich werden in einer vierten Region erfasst, die Fußnoten und Anmerkungen umfasst.
+
+![Eine Seite, bei der alle vier oben genannten Regionen vorhanden und erfasst sind.](img/transkription1_regions.png)
+
+Die Transkription sieht entsprechend, wie in den folgenden beiden Screenshot gezeigt wird aus:
+
+![Region 1 und 2](img/transkription2_region1und2.png)
+
+usw. Im Beispiel wurde der Text nur strukturell angepasst, aber noch nicht auf seine Richtigkeit hin überprüft.
+
+![Region 3 und 4](img/transkription3_region3und4.png)
+
+#### Weitere Absprachen
+
+* Die Transkription erfolgt quellennah, Eingriffe sollten soweit möglich vermieden werden. 
+* Leerzeichen bleiben erhalten, wie sie in der Quelle erkennbar sind.
+* Eingriffe in den Text (bspw. weil etwas nicht lesbar, unverständlich oder ergänzt worden ist) werden (zunächst!) durch eckige Klammern "[", "]" kenntlich gemacht. 
+
+### Export der Transkription
+
+Da der Export der Transkription als TEI-Dokument derzeit noch nicht aus dem Online-Tool möglich ist, müssen wir leider einen kleinen Workaround bemühen, der im Folgenden erklärt wird:
+
+(1.) Öffnen Sie die Collection mit Ihrer Leichenpredigt.
+
+![Collections](img/export1_collections.png)
+
+(2.) Lokalisieren Sie auf der linken Seite den Menüpunkt *User-Manager*.
+
+![User Management](img/export2_user-management.png)
+
+(3.) Wechseln Sie auf den Tab *Add* und fügen Sie dort meine E-Mail-Adresse ein.
+
+![E-Mail](img/export3_users.png)
+
+(4.) Ändern Sie die Rolle zu *Editor* und klicken Sie *+ Add*.
+
+![E-Mail und Rolle](img/export4_user-add.png)
+
+(5.) Senden Sie mir eine E-Mail, um mich zu benachrichtigen, sobald Ihre Transkription abgeschlossen ist und Sie einen Export wünschen.
+
+### Hausaufgabe
+
+Lesen Sie Kapitel 18 "Manuelle und automatische Annotationen" (S. 253 - 267) in:
+
+Jannidis, F.; Kohle, H. & Rehbein, M. (Eds.): *Digital Humanities*. J.B. Metzler, 2017.
