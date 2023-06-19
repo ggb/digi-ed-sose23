@@ -999,11 +999,11 @@ Einführung TEI und gemeinsame Arbeitssitzung zur Fortsetzung der Transkription.
 
 ### Grundstruktur
 
-1. Wurzelelemnt ist <TEI>
-2. Namespace kommt mit in das Wurzelelement: <TEI xmlns=“http://www.tei-c.org/ns/1.0“>
+1. Wurzelelemnt ist `<TEI>`
+2. Namespace kommt mit in das Wurzelelement: `<TEI xmlns="http://www.tei-c.org/ns/1.0">`
 3. Zuweisung des Schemas
-4. <teiHeader> für die Metadaten
-5. <text> erst jetzt folgt der Text der Edition
+4. `<teiHeader>` für die Metadaten
+5. `<text>` erst jetzt folgt der Text der Edition
 
 #### Header - Ein Zuhause für Metadaten
 
@@ -1015,27 +1015,27 @@ Einführung TEI und gemeinsame Arbeitssitzung zur Fortsetzung der Transkription.
 
 #### 4 (oder 5?) Kernelemente
 
-* <fileDesc> -> bibliographische Beschreibung der Datei
-* <encodingDesc> -> Verhältnis zwischen elektronischem Text und seiner Quelle
-* <profileDesc> -> Beschreibung der nicht-bibliographischen Merkmale des Textes, insbes. Sprache, Entstehung(sbedingungen), Beteiligte, Aussehen des Mediums
-* <xenoData> -> alle nicht TEI-konformenen Metadaten
-* <revisionDesc> -> dokumentiert die Änderungen, die an der elektronischen Datei vorgenommen wurden (wer, wann, was)
+* `<fileDesc>` -> bibliographische Beschreibung der Datei
+* `<encodingDesc>` -> Verhältnis zwischen elektronischem Text und seiner Quelle
+* `<profileDesc>` -> Beschreibung der nicht-bibliographischen Merkmale des Textes, insbes. Sprache, Entstehung(sbedingungen), Beteiligte, Aussehen des Mediums
+* `<xenoData>` -> alle nicht TEI-konformenen Metadaten
+* `<revisionDesc>` -> dokumentiert die Änderungen, die an der elektronischen Datei vorgenommen wurden (wer, wann, was)
 
 > Woher können wir diese Informationen in *unserem* Fall bekommen?
 
 #### Must-have I
 
-* <fileDesc> ist das einzige verpflichtende Elemente im header.
-* Aus der <fileDesc> werden wichtige Informationen übernommen, die für Katalogeinträge relevant sind und die Zitation der elektronischen Datei ermöglichen. AutorIn, Titel, HerausgeberIn, Publikation, Distribution, Angaben zur analogen Quelle, Verantwortliche, Finanzierung des Projekts etc. werden dort festgehalten.
-* Eine gute <fileDesc> weist gute wissenschaftliche Praxis aus und validiert digitale Publikationen als nachvollziehbar und zitierbar.
+* `<fileDesc>` ist das einzige verpflichtende Elemente im header.
+* Aus der `<fileDesc>` werden wichtige Informationen übernommen, die für Katalogeinträge relevant sind und die Zitation der elektronischen Datei ermöglichen. AutorIn, Titel, HerausgeberIn, Publikation, Distribution, Angaben zur analogen Quelle, Verantwortliche, Finanzierung des Projekts etc. werden dort festgehalten.
+* Eine gute `<fileDesc>` weist gute wissenschaftliche Praxis aus und validiert digitale Publikationen als nachvollziehbar und zitierbar.
 
 #### Must-have II
 
-Innerhalb der <fileDesc> stehen verpflichtend:
+Innerhalb der `<fileDesc>` stehen verpflichtend:
 
-1. <titleStmt> Angaben zum Titel der Datei
-2. <publicationStmt> Angaben zu den Publikationsdaten der Datei
-3. <sourceDesc> Angaben zur Quelle/Vorlage der Datei
+1. `<titleStmt>` Angaben zum Titel der Datei
+2. `<publicationStmt>` Angaben zu den Publikationsdaten der Datei
+3. `<sourceDesc>` Angaben zur Quelle/Vorlage der Datei
 
 Wie für die meisten Dinge zu Beginn einer Publikation, ist es ratsam, diese Informationen erst am Ende des Prozesses einzutragen und zu Beginn lediglich Platzhalter zu schreiben
 
@@ -1104,3 +1104,123 @@ Da der Export der Transkription als TEI-Dokument derzeit noch nicht aus dem Onli
 Lesen Sie Kapitel 18 "Manuelle und automatische Annotationen" (S. 253 - 267) in:
 
 Jannidis, F.; Kohle, H. & Rehbein, M. (Eds.): *Digital Humanities*. J.B. Metzler, 2017.
+
+## Sitzung am 08.06.
+
+### Besprechung von Kapitel 18 (Jannidis)
+
+1. Warum annotieren wir? Welche Funktionen erfüllen Annotationen?
+2. Worin unterscheiden sich *prozedurale* und *deklarative* Auszeichnungen?
+3. Wie wird durch digitale Annotationen eine schon existierende, analoge Forschungspraxis forgesetzt?
+4. Welche Schritte beinhaltet der Prozess der Kategorienbildung? In welchem Schritt befinden wir uns aktuell? Welche Schritte werden wir voraussichtlich nicht oder nur in begrenztem Umfang umsetzen?
+5. Wodurch unterscheiden sich manuelle und automatische Annotationsverfahren?
+6. Welche Möglichkeiten bietet XML TEI zum Umgang mit Bildern und Bildmaterial?
+7. Wie lassen sich Aussagen über die Qualität von Annotationen treffen?
+
+### Unser Annotationsvokabular
+
+* Person (`persName`)
+* Organisation (`orgName`)
+* Ort (`placeName`)
+* Term, Begriff (`term`)
+* Datum (`date`)
+* Link (`ref`)
+* Abkürzung (`abbr`)
+* Sic! (`sic`)
+* Regulierende Eingriffe (`reg`)
+* Highlight (`hi`)
+
+> Genügt das? Brauchen wir mehr (oder weniger)?
+
+### Forschungsfragen entwickeln
+
+> Recherchieren Sie *Ihren* Professor im Kieler Gelehrtenverzeichnis (https://cau.gelehrtenverzeichnis.de).
+> 
+> Ihre Transkription, das vorgesehene Tagset und die Informationen aus dem Gelehrtenverzeichnis gegeben: Stellen Sie sich vor, Sie *müssen* Ihre Abschlussarbeit mit Hilfe dieser Bausteine/Werkzeuge schreiben:
+> 
+> 1. Welche Forschungsfrage würden Sie zur Bearbeitung wählen?
+> 2. Was fehlt Ihnen? Was würden Sie zusätzlich auszeichnen wollen? Welche Informationen müssten Sie zur Beantwortung Ihrer Fragestellung hinzunehmen/-recherchieren?
+> 3. Welche Präsentation der annotierten Leichenpredigt wäre für die Bearbeitung Ihrer Forschungsfrage besonders hilfreich? 
+
+### Hausaufgabe
+
+> Füllen Sie die Erfassungsrichtlinie (OLAT) für Ihr Dokument aus.
+
+## Sitzung am 15.06.
+
+In dieser Woche beschäftigen wir uns mit dem Import der transkribierten Dokumente in den TEI Publisher, der Anpassung des TEI Headers, sowie der Annotation der Dokumente mit den Mitteln des Publishers. 
+
+### Erste Schritte mit dem TEI Publisher
+
+   {{1}}
+Der TEI Publisher begrüßt Sie mit dem folgenden Start-Bildschirm:
+
+![Start-Bildschirm des TEI Publishers](img/tei_pub_start.png)
+
+   {{2}}
+Loggen Sie sich zunächst mit den Login-Daten ein (oben rechts), die Sie von mir per Mail erhalten haben.
+
+   {{3}}
+Klicken Sie anschließend auf "Annotation Samples": Dadurch kommen Sie in eine neue Ansicht, in der Sie eigene Dokumente hochladen können, in dem Sie sie mit *drag and drop* aus einem Verzeichnis in den Upload-Bereich (rechts, unterhalb des Logins) verschieben. 
+
+![Annotations Samples und Upload-Bereich](img/tei_pub_upload.png)
+
+Anschließend sind die Dokumente in der Liste (mitte) sichtbar und können angeglickt werden. Dadurch gelangen Sie in die Annotationsansicht.
+
+   {{4}}
+In der Annotationsansicht können Sie ein oder mehrere Worte markieren, wie Sie es aus anderen Textverarbeitungsprogrammen gewohnt sind. Durch einen Klick auf eines der Icon auf der linken Seite, versehen Sie die Markierung mit einer TEI-Annotation (einem *tag*). 
+
+![Annotationsansicht](img/anno_markieren.png)
+
+   {{5}}
+Es öffnet sich eine Suchmaske, die die Annotation mit einem eindeutigen *Identifier* in der GND verknüpft. Für die Suche müssen sie u. U. den Suchterm anpassen (und möglicherweise auch verschiedene ausprobieren). 
+
+![Identifier suchen und korrigieren](img/anno_korrigieren.png)
+
+   {{6}}
+Gibt es mehrere Auftreten des gleichen Terms im Dokument, dann erhalten Sie auf der linken Seite (unterhalb der Icon) die Möglichkeit durch das Anhaken der Boxen auch alle anderen Auftreten auszuzeichnen. Dies vereinfacht und beschleunigt die Annotation. 
+
+
+### TEI Header umsetzen
+
+Bevor Sie mit der Annotation des Dokuments loslegen, sollten Sie zunächst den TEI Header anpassen:
+
+   {{1}}
+Füllen Sie zunächst die [Erfassungsrichtlinie](https://ruapehu.informatik.uni-kiel.de/erfassungsrichtlinie/) vollständig aus:
+
+![Erfassungsrichtlinie](img/erfassungsrichtlinie.png)
+
+Markieren Sie anschließend das vollständige (!) XML (von und einschließlich `<teiHeader>` bis `</teiHeader>`) und kopieren Sie es.
+
+   {{2}}
+Öffnen Sie als nächstes Ihr Dokument im TEI Publisher (s. Erste Schritte). Dort finden Sie den XML-Editor, wenn Sie oben rechts auf das "Burger"-Menü klicken und...
+
+![Burger Menü](img/burger_menu.png)
+
+... in dem Sich anschließend öffnenden Menü "VIEW TEI XML" auswählen.
+
+![View TEI XML](img/view_tei_xml.png)
+
+   {{3}}
+Es öffnet sich ein XML-Editor. Innerhalb dieses Editors markieren Sie alles von und einschließlich `<teiHeader>` bis `</teiHeader>`. Diesen Bereich können Sie löschen und durch Ihren neu erstellten Header ersetzen.
+
+![TEI Header ersetzen](img/replace_tei_header.png)
+
+Melden Sie sich bei uns, falls Sie damit Probleme haben sollten! Sie können unabhängig von der Änderung des Headers bereits mit der Annotation beginnen.
+
+### Annotationsrichtlinie
+
+Annotationsrichtlinien sind in der Regel sehr umfangreich und stellen selbst einen bedeutenden Teil der Forschungsarbeit in Projekten dar. Ein Beispiel dafür finden Sie in den [Guidelines for the electronic encoding of Medieval Nordic primary sources](https://www.menota.org/HB3_index.xml). 
+
+Im Rahmen unseres Projektseminars haben wir nicht die Zeit und Ressourcen eine derartig feingliedrige Richtlinie für die Auszeichnung der Inhalte zu erstellen. Wir beschränken uns auf die folgenden Regeln (die im Seminarverlauf durch Ihre Rückmeldungen erweitert und ergänzt werden):
+
+1. Personen, Organisationen, Orte und Datumsangaben sollen vollständig erfasst werden. 
+2. Berufsbezeichnungen, Titel und Fachbereiche sollen durch die *Term*-Annotation erfasst und mit einem Eintrag in der GND verknüpft werden. 
+3. Auf die Erfassung von Bibelversen und biblischen Personen wird verzichtet.
+4. Personen, Organisationen, Orte und Begriffe, die sich nicht im TEI Publisher erfassen lassen, sollen in einem separaten Dokument gesammelt werden. Dieses Dokument sollte neben dem Element auch dessen Position im Dokument, sowie weitere Informationen berücksichtigen, die relevant sind (bei einer Person bspw. das Verwandschaftsverhältnis). 
+
+### Hausaufgabe
+
+> Annotieren Sie bis zur nächsten Woche, soweit Sie kommen.
+> 
+> Notieren Sie Personen, Orte und Organisationen, für die Sie keinen Eintrag in der GND finden (s. Annotationsrichtlinie). Erstellen Sie sich dafür eine Liste oder ein Excel-Dokument, das den/die Person/Ort/Organisation enthält, die Person im Dokument, sowie weiterführende Informationen (bspw. "ist Onkel von").
