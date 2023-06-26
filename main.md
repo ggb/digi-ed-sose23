@@ -1224,3 +1224,144 @@ Im Rahmen unseres Projektseminars haben wir nicht die Zeit und Ressourcen eine d
 > Annotieren Sie bis zur nächsten Woche, soweit Sie kommen.
 > 
 > Notieren Sie Personen, Orte und Organisationen, für die Sie keinen Eintrag in der GND finden (s. Annotationsrichtlinie). Erstellen Sie sich dafür eine Liste oder ein Excel-Dokument, das den/die Person/Ort/Organisation enthält, die Person im Dokument, sowie weiterführende Informationen (bspw. "ist Onkel von").
+
+## Sitzung am 22.06.
+
+### Neue Annotationstypen: 'trait' und 'event'
+
+Aus den Überlegungen zu eigenen Forschungsfragen in der Sitzung am 08.06. hatten sich zwei Bedarfe für Auszeichnungen ergeben, die über den Standard hinausgehen, den der TEI Publisher bietet:
+
+* Eine Auszeichnung der *Berufsbezeichnungen* bzw. *Titel*, sowie die *Fachbereiche* würden helfen den akademischen Werdegang nachzuvollziehen.
+* Es wäre interessant die *Charaktereigenschaften* der verstobenen Personen zu annotieren, wie sie in der Leichenpredigt dargestellt werden.
+* Insgesamt wäre es wünschenswert private und berufliche *Ereignisse* im Leben der Person im Text kenntlich zu machen.
+
+Während ersteres sich durch die `term`-Annotation bereits problemlos bewerkstelligen lässt, fehlte für die beiden anderen Punkte eine zufriedenstellende Möglichkeit. Dem haben wir durch eine Erweiterung unseres *tag sets* Abhilfe geschaffen: Durch die `event`-Annotation (Sanduhr-Icon) können Ereignisse, durch die `trait`-Annotation (Herz-Icon) Charaktereigenschaften abgebildet werden.
+
+Für beide ist keine Normdatei oder -datenbank hinterlegt, so dass beim Typ bis auf weiteres selbstgewählte, sinnvolle Werte vergeben werden sollten. Dabei empfiehlt es sich das ausgezeichnete Element auf einen gemeinsamen Wert zu verallgemeinern, bspw. *hochedel*, *edelst*, *des Edelsten Herrn...*, etc. mit dem `type` *edel* zu versehen.
+
+![Neue Annotationen](img/neue_annotationen.png)
+
+
+### Normdaten und Normdatenbanken
+
+*Normdaten* bieten ein kontrolliertes Vokabular zur Identifikation von Personen, Orten, Institutionen u.v.m. In *Normdatenbanken* werden *Normdaten* anhand eines eindeutigen, persistenten Identifiers zur Verfügung gestellt. Dieser wird auch als *Uniform Resource Identifier* (URI) bezeichnet.
+
+> Warum sind Normdaten und Normdatenbanken eine gute Idee?
+
+      {{1}}
+Aus Gründen der **FAIR**ness (Findable, Accessible, Interoperable, Reusable).
+
+#### Wichtige Normdatenbanken (Autoritäten)
+
+* GND (gemeinsame Normdatei): Personen, Körperschaften, Orte
+* LCCN (Library of Congress Control Number): amerikanische Variante der GND
+* VIAF (Virtual International Authority File): Mapping versch. Normdaten
+* Geonames: offenes Projekt für Ortsnamen
+* TGN (Getty Thesaurus of Geographic Names): Ortsnamen
+* u.v.a.
+
+#### Weitere Informationen
+
+Vertiefende Informationen finden Sie hier (keine Pflichtlektüre, aber empfohlen):
+
+> Kapitel 16 "Aufbau von Datensammlungen" (S. 223 - 233) in:
+>
+> Jannidis, F.; Kohle, H. & Rehbein, M. (Eds.): *Digital Humanities*. J.B. Metzler, 2017.
+
+### Verlinkung und eigene Normdaten
+
+Innerhalb eines TEI-Dokuments können wir selbst Identifikationen vergeben und *interne Normdaten* zur Verfügung stellen. 
+
+Die Verknüpfung eines Auszeichnung mit internen oder externen Normdaten erfolgt über eine Verlinkung (*linking*).
+
+> In welchen Fällen könnte es sinnvoll sein eigene Normdaten zur Verfügung zu stellen?
+
+#### Linking
+
+*Linking* wird verwendet, um Verbindungen zwischen identifizierten benannten Entitäten (*named entities*, z.B. Personen, Orte, Ereignisse, ...) und einer ausführlicheren Erklärung bzw. einem Normdatum herzustellen.
+
+Eine Verlinkung wird mittels einem Identifier hergestellt, der im `ref`-Attribut des verlinkenden Tags angegeben wird. 
+
+Handelt es sich um einen internen Link, also um einen Link, der auf etwas verlinkt, das im gleichen Dokument definiert wird, muss ein `#` vor dem Identifier stehen. 
+
+#### Beispiel
+
+Das folgende, ausführliche Beispiel aus der [TEI Dokumentation](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-standOff.html) veranschaulicht sehr gut das Vorgehen: In einem speziellen Bereich, dem `standOff`, werden eigene Normdaten definiert: Die Städte Atlanta und Birmingham. Beide verfügen über einen eindeutigen, einzigartigen Identifier (`LATL` und `LBHM`). Diese IDs können im weiteren Text verwendet werden, um eine interne Verlinkung (bspw. `#LATL`) zwischen einer `placeName`-Auszeichnung und der entsprechenden Stadt herzustellen: `<placeName ref="#LATL">Atlanta</placeName>`. 
+
+```xml
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+<!-- ... -->
+ </teiHeader>
+ <standOff>
+  <listPlace>
+   <place xml:id="LATL">
+    <placeName>Atlanta</placeName>
+    <location>
+     <region key="US-GA">Georgia</region>
+     <country key="USA">United States of America</country>
+     <geo>33.755 -84.39</geo>
+    </location>
+    <population when="1963"
+     type="interpolatedCensus" quantity="489359"
+     source="https://www.biggestuscities.com/city/atlanta-georgia"/>
+   </place>
+   <place xml:id="LBHM">
+    <placeName>Birmingham</placeName>
+    <location>
+     <region key="US-AL">Alabama</region>
+     <country key="USA">United States of America</country>
+     <geo>33.653333 -86.808889</geo>
+    </location>
+    <population when="1963"
+     type="interpolatedCensus" quantity="332891"
+     source="https://www.biggestuscities.com/city/birmingham-alabama"/>
+   </place>
+  </listPlace>
+ </standOff>
+ <text>
+  <body>
+<!-- ... -->
+   <p>Moreover, I am <choice>
+     <sic>congnizant</sic>
+     <corr>cognizant</corr>
+    </choice> of the interrelatedness of all communities and
+   <lb/>states. I cannot sit idly by in <placeName ref="#LATL">Atlanta</placeName> and not be concerned about what happens
+   <lb/>in <placeName ref="#LBHM">Birmingham</placeName>. <seg xml:id="FQ17">Injustice anywhere is a threat to justice everywhere.</seg> We
+   <lb/>are caught in an inescapable network of mutuality, tied in a single garment
+   <lb/>of destiny. Whatever affects one directly affects all indirectly. Never
+   <lb/>again can we afford to live with the narrow, provincial <soCalled rendition="#Rqms">outside agitator</soCalled>
+    <lb/>idea. Anyone who lives inside the United States can never be considered
+   <lb/>an outsider anywhere in this country.</p>
+<!-- ... -->
+  </body>
+ </text>
+</TEI>
+```
+
+#### Alternativen zum 'standOff'
+
+Neben dem `standOff`-Bereich, der sich unmittelbar unter dem TEI-Wurzelelement befindet, gibt es auch noch zwei Alternativen:
+
+[`back`](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-back.html) beinhaltet Anhänge und vertiefende Informationen zu einem Text oder Textabschnitt. Entsprechend wird dieser Bereich in der Regel im Anschluss an einen `text` angefügt. 
+
+[`particDesc`](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-particDesc.html) und [`settingDesc`](https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-settingDesc.html) sind Elemente des TEI Headers und dienen dazu Personen, Organisationen (im Fall von `particDesc`) und Orte (im Fall von `settingDesc`) zu definieren. 
+
+Die verschiedenen Auszeichnungen haben verschiedene Anwendungsbereiche, die sich in der Dokumentation nachlesen lassen. Im Zweifel ist `standOff` in der Regel keine schlechte Wahl und kann verwendet werden, solange sich keine unmittelbaren Gründe ergeben, die dagegen sprechen. 
+
+### Hausaufgabe
+
+> Fahren Sie mit der Annotation der Daten fort! Sofern Sie die Annotation bereits abgeschlossen haben, können Sie gerne die neuen Annotationstypen `trait` und `event` verwenden, um Ihre Auszeichnungen mit weiteren Informationen anzureichern.
+>
+> Notieren Sie Personen, Organisationen und Orte, die Sie nicht in einer Normdatenbank finden konnten, in der folgenden Cloud-Datei: https://cloud.rz.uni-kiel.de/index.php/s/bDEXxHdtJJN4xFq
+> Beachten Sie bitte, dass es für Personen, Organisationen und Orte jeweils ein eigenes Tabellenblatt gibt. 
+
+## Sitzung am 29.06.
+
+## Sitzung am 06.07.
+
+### Aufgabe für die Abschlusspräsentation
+
+> Präsentieren Sie die Person Ihrer Leichenpredigt in einem 3-minütigen Vortrag. Die Vortragslänge wird mit einer Stoppuhr überprüft und nach exakt drei Minuten abgebrochen. Fassen Sie sich also kurz und überlegen Sie sich, welchen Aspekt der Person Sie hervorheben und welche Informationen Ihnen wichtig sind.
+> 
+> Zur Unterstüztung Ihrer Präsentation können Sie eine (!) PowerPoint-Folie, Website (bspw. das [Kieler Gelehrtenverzeichnis](https://cau.gelehrtenverzeichnis.de/)) oder andere Visualisierung verwenden. 
